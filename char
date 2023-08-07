@@ -1,0 +1,21 @@
+int main()
+{
+    int n, arr[N];
+    char arr1[N];
+    cout << " ";
+    cin >> n;
+    int value;
+    char value1;
+    int number;
+    menu();
+    cout << " ";
+    while(1)
+    {
+        int val;
+        cin >> val;
+        if(val == 1)
+        {
+            for(int i = 0;i < n; i++)
+            {
+                cin >> arr[i];
+            }
