@@ -1,0 +1,23 @@
+import requests
+
+session = requests.session()
+
+header = {
+    'Referer': 'http://www.aa7a.cn/user.php?&ref=http%3A%2F%2Fwww.aa7a.cn%2F',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
+}
+res = session.post('http://www.aa7a.cn/user.php', headers=header, data={
+    'username': 'xxx@qq.com',
+    'password': 'xxx',
+    'captcha': 'fmd8',
+    'remember': 1,
+    'ref': 'http://www.aa7a.cn/',
+    'act': 'act_login',
+})
+
+# cookie=res.cookies
+# print(cookie)  # CookieJar
+
+res1 = session.get('http://www.aa7a.cn/', headers=header)
+
+print('xxx@qq.com' in res1.text)
