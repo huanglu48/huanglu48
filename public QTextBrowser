@@ -1,0 +1,22 @@
+#pragma once
+ 
+#include <QTextBrowser>
+ 
+class History_Browser : public QTextBrowser
+{
+	Q_OBJECT
+ 
+public:
+	History_Browser();
+	~History_Browser();
+	int get_len()
+	{
+		return this->history_length;
+	}
+	void set_len(int len)
+	{
+		this->history_length = len;
+	}
+private:
+	int history_length = 0;
+};
